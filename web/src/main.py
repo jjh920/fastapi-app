@@ -3,8 +3,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
+from prometheus_fastapi_instrumentator import Instrumentator
 
 app = FastAPI()
+instrumentator = Instrumentator()
+instrumentator.instrument(app).expose(app)
 
 # mariadb 커넥션 초기화
 host = "db"
