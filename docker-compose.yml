@@ -21,7 +21,7 @@ services:
     environment:
       - DATA_SQURCE_NAME=root:abc123!@(db:3306)/
     depends_on:
-      db
+      - db
 
   web:
       image: jjh920/fawebapp
