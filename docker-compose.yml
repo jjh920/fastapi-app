@@ -19,7 +19,7 @@ services:
     ports:
       - 9104:9104
     environment:
-      DATA_SQURCE_NAME: root:abc123!@(db:3306)/
+      - DATA_SQURCE_NAME=root:abc123!@(db:3306)/
     depends_on:
       db
 
